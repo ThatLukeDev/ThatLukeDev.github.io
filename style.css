@@ -1,0 +1,144 @@
+/* eae8ff d8d5db 4c5f6b 2d3142 b0d7ff */
+
+::-webkit-scrollbar {
+    display: none;
+}
+.rotate {
+    transform: translateX(-100%);
+    position: fixed;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.sections {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.cText {
+    color: #eae8ff;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10vh;
+    margin-top: 2.5vh;
+    margin-left: 10vh;
+    margin-bottom: 0vh;
+    transition: 1s;
+}
+.cSwitch {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10vh;
+    margin-top: 2.5vh;
+    margin-left: 10vh;
+    margin-bottom: 0vh;
+}
+.cText2 {
+    color: #d8d5db;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4vh;
+    margin-top: 1vh;
+    margin-left: 10vh;
+    margin-bottom: 0vh;
+    text-align: justify;
+    text-justify: inter-word;
+    transition: 1s;
+}
+.cSwitch2 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4vh;
+    margin-top: 1vh;
+    margin-left: 10vh;
+    margin-bottom: 0vh;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.cFore {
+    background-color: #4c4f6b;
+    transition: 1s;
+}
+.cBack {
+    background-color: #2d3142;
+    transition: 1s;
+}
+.cOff {
+    color: #b0d7ff;
+}
+.scrollFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scroll {
+    width: 4vh;
+}
+.homeFlex {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
+.home {
+    width: 4vh;
+    margin-top: 2vh;
+    margin-right: 2vh;
+}
+.macroFlex {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.macroImg {
+    width: 100vh;
+    margin-top: -15vh;
+    margin-right: 1vh;
+}
+.slideLeft {
+    transform: translateX(100%);
+    transition: 1s;
+}
+.slidLeft {
+    transform: translateX(0);
+}
+.switch {
+    transition: 1s;
+}
+@media screen and (orientation: landscape) {
+    .rotate {
+        width: 0px;
+        height: 0px;
+        transform: translateX(-100%);
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .sections > section > * {
+        width: 0px;
+        height: 0px;
+        font-size: 0px;
+    }
+    .sections > section > * > * {
+        width: 0px;
+        height: 0px;
+        font-size: 0px;
+    }
+    .cBack {
+        background-color: #ffffff;
+    }
+    .rotate {
+        transform: translateX(0%);
+        z-index: -32768;
+        width: 100%;
+    }
+    .home {
+        transform: translateX(-100%);
+    }
+}
