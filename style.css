@@ -1,8 +1,14 @@
 /* eae8ff d8d5db 4c5f6b 2d3142 b0d7ff */
 
+section {
+    height: 100%;
+    position: relative;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
+
 .rotate {
     transform: translateX(-100%);
     position: fixed;
@@ -85,6 +91,9 @@ section {
 }
 .scroll {
     width: 4vh;
+    vertical-align: bottom;
+    position: absolute;
+    bottom: 7.5vh;
 }
 .homeFlex {
     display: flex;
