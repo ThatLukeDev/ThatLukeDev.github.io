@@ -1,10 +1,5 @@
 /* eae8ff d8d5db 4c5f6b 2d3142 b0d7ff */
 
-section {
-    height: 100%;
-    position: relative;
-}
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -26,13 +21,14 @@ body {
 section {
     display: inline-block;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     scroll-snap-align: start;
+    position: relative;
 }
 
 .sections {
     width: 100%;
-    height: 100vh;
+    height: 95vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }
@@ -93,7 +89,7 @@ section {
     width: 4vh;
     vertical-align: bottom;
     position: absolute;
-    bottom: 7.5vh;
+    bottom: 5vh;
 }
 .homeFlex {
     display: flex;
