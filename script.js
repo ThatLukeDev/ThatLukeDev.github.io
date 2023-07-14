@@ -1,4 +1,6 @@
 window.onload = () => {
+    document.getElementsByClassName("sections")[0].style.display = "block"
+    document.getElementsByClassName("centerLoader")[0].style.display = "none"
     const slideObserver = new IntersectionObserver((entries) => {
         entries.forEach((v) => {
             if (v.isIntersecting) {
