@@ -178,7 +178,7 @@ section {
   height: 3.5vh;
   border-radius: 50%;
   background: #fff;
-  animation: lds-grid 1.2s linear infinite;
+  animation: lds-grid 2.5s cubic-bezier(0.25, 0.25, 0.75, 0.75) infinite;
 }
 .lds-grid div:nth-child(1) {
   top: 0vh;
@@ -188,48 +188,50 @@ section {
 .lds-grid div:nth-child(2) {
   top: 0vh;
   left: 5vh;
-  animation-delay: -0.4s;
+  animation-delay: 0.5s;
 }
 .lds-grid div:nth-child(3) {
   top: 0vh;
   left: 10vh;
-  animation-delay: -0.8s;
+  animation-delay: 1s;
 }
 .lds-grid div:nth-child(4) {
   top: 5vh;
   left: 0vh;
-  animation-delay: -0.4s;
+  animation-delay: 0.5s;
 }
 .lds-grid div:nth-child(5) {
   top: 5vh;
   left: 5vh;
-  animation-delay: -0.8s;
+  animation-delay: 1s;
 }
 .lds-grid div:nth-child(6) {
   top: 5vh;
   left: 10vh;
-  animation-delay: -1.2s;
+  animation-delay: 1.5s;
 }
 .lds-grid div:nth-child(7) {
   top: 10vh;
   left: 0vh;
-  animation-delay: -0.8s;
+  animation-delay: 1s;
 }
 .lds-grid div:nth-child(8) {
   top: 10vh;
   left: 5vh;
-  animation-delay: -1.2s;
+  animation-delay: 1.5s;
 }
 .lds-grid div:nth-child(9) {
   top: 10vh;
   left: 10vh;
-  animation-delay: -1.6s;
+  animation-delay: 2s;
 }
 @keyframes lds-grid {
   0%, 100% {
     opacity: 1;
+    transform: scale(110%);
   }
   50% {
     opacity: 0.5;
+    transform: scale(100%);
   }
 }
