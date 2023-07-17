@@ -114,6 +114,10 @@ section {
     margin-top: -15vh;
     margin-right: 1vh;
 }
+.parallaxImg {
+    width: 60vw;
+    margin-right: 5vh;
+}
 .slideLeft {
     transform: translateX(100%);
     transition: 1s;
