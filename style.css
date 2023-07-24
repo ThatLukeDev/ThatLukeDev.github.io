@@ -4,9 +4,8 @@
     display: none;
 }
 
-.rotate {
-    transform: translateX(-100%);
-    position: fixed;
+.rotate1 {
+  display: none;
 }
 
 html {
@@ -130,33 +129,27 @@ section {
 }
 @media screen and (orientation: landscape) {
     .rotate {
-        width: 0px;
-        height: 0px;
-        transform: translateX(-100%);
+        display: none;
+        position: fixed;
     }
 }
 
 @media screen and (orientation: portrait) {
     .sections > section > * {
-        width: 0px;
-        height: 0px;
-        font-size: 0px;
+        display: none;
     }
     .sections > section > * > * {
-        width: 0px;
-        height: 0px;
-        font-size: 0px;
-    }
-    .cBack {
-        background-color: #ffffff;
+        display: none;
     }
     .rotate {
-        transform: translateX(0%);
-        z-index: -32768;
-        width: 100%;
+        margin-top: 24vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
     }
-    .home {
-        transform: translateX(-100%);
+    .rotateItem {
+        transform: scale(10);
     }
 }
 .centerLoader {

@@ -2,6 +2,7 @@ window.onload = () => {
     setTimeout(() => {
         document.getElementsByClassName("sections")[0].style.display = "block"
         document.getElementsByClassName("centerLoader")[0].style.display = "none"
+        document.getElementsByClassName("rotate1")[0].classList.add("rotate")
         setTimeout(() => {
             const slideObserver = new IntersectionObserver((entries) => {
                 entries.forEach((v) => {
