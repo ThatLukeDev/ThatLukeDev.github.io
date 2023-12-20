@@ -104,6 +104,12 @@ section {
     margin-top: 2vh;
     margin-right: 2vh;
 }
+.raytraceImg {
+    width: 100vh;
+    margin-top: -10vh;
+    margin-right: 2.5vh;
+    border-radius: 5vh;
+}
 .macroFlex {
     display: flex;
     align-items: center;
