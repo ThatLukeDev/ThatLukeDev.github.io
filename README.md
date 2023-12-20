@@ -5,4 +5,4 @@ This website is a 'portfolio', a collection of different showcases of my work al
 
 ---
 
-- To view this website, simply go to my [github pages website](thatlukedev.github.io) at `https://thatlukedev.github.io/`.
+- To view this website, simply go to my [github pages website](https://thatlukedev.github.io/) at `https://thatlukedev.github.io/`.
