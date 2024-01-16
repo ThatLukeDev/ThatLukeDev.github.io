@@ -7,6 +7,9 @@ window.onload = () => {
             const slideObserver = new IntersectionObserver((entries) => {
                 entries.forEach((v) => {
                     if (v.isIntersecting) {
+                        if (v.target.classList.contains("infloop")) {
+                            v.target.src = "https://thatlukedev.github.io?" + Math.random()
+                        }
                         v.target.classList.add("slidLeft")
                     }
                     else {
@@ -16,6 +19,8 @@ window.onload = () => {
             })
             const slideRightElements = document.querySelectorAll(".slideLeft")
             slideRightElements.forEach((element) => slideObserver.observe(element))
+            const infloopElements = document.querySelectorAll(".infloop")
+            infloopElements.forEach((element) => slideObserver.observe(element))
             const colourObserver = new IntersectionObserver((entries) => {
                 entries.forEach((v) => {
                     if (v.isIntersecting) {
