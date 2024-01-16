@@ -8,7 +8,7 @@ window.onload = () => {
                 entries.forEach((v) => {
                     if (v.isIntersecting) {
                         if (v.target.classList.contains("infloop")) {
-                            v.target.src = "https://thatlukedev.github.io?" + Math.random()
+                            v.target.src = "index.html?" + Math.random()
                         }
                         v.target.classList.add("slidLeft")
                     }
