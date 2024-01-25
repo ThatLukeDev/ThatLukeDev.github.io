@@ -35,6 +35,10 @@ section {
     scroll-snap-type: y mandatory;
 }
 
+.noUnderline {
+    text-decoration: none;
+}
+
 .cText {
     color: #eae8ff;
     font-family: 'Roboto Mono', monospace;
