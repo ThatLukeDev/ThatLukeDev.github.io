@@ -110,7 +110,6 @@ section {
 }
 .raytraceImg {
     width: 100vh;
-    margin-top: -10vh;
     margin-right: 2.5vh;
     border-radius: 5vh;
 }
@@ -128,7 +127,6 @@ section {
 }
 .macroImg {
     width: 100vh;
-    margin-top: -15vh;
     margin-right: 1vh;
 }
 .parallaxImg {
