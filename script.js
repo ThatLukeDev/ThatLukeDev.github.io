@@ -59,7 +59,8 @@ window.onload = () => {
             let checkWidthInterval = setInterval(() => {
                 if (window.innerHeight < window.innerWidth) {
                     if (sections.innerHTML == "") {
-                        location.reload();
+                        window.location.reload();
+                        clearInterval(checkWidthInterval);
                     }
                 }
                 else {
