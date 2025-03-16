@@ -35,6 +35,10 @@ section {
     scroll-snap-type: y mandatory;
 }
 
+.sections > section {
+    scroll-snap-stop: always;
+}
+
 .noUnderline {
     text-decoration: none;
 }
