@@ -34,37 +34,38 @@ window.onload = () => {
             const colourSwitchElements = document.querySelectorAll(".switchColour");
             colourSwitchElements.forEach((element) => colourObserver.observe(element));
 
+            const titleText = "My Portfolio";
+            let i = 0;
+
+            var timer = setInterval(function() {
+                document.getElementById("title").innerHTML = document.getElementById("title").innerHTML.slice(0, -1) + titleText[i] + "_";
+                if (i >= titleText.length - 1) {
+                    clearInterval(timer);
+                    setInterval(() => {
+                        document.querySelectorAll(".typeFlash").forEach((v) => {
+                            if (v.innerHTML.includes("_")) {
+                                v.innerHTML = v.innerHTML.slice(0, v.innerHTML.length-1);
+                            }
+                            else {
+                                v.innerHTML += "_";
+                            }
+                        });
+                    }, 1000);
+                }
+                i++;
+            }, 150);
+
             let sections = document.querySelector(".sections");
-            let innerSections = sections.innerHTML;
-            sections.innerHTML = "";
             let checkWidthInterval = setInterval(() => {
                 if (window.innerHeight < window.innerWidth) {
-                    clearInterval(checkWidthInterval);
-
-                    sections.innerHTML = innerSections;
-        
-                    const titleText = "My Portfolio";
-                    let i = 0;
-        
-                    var timer = setInterval(function() {
-                        document.getElementById("title").innerHTML = document.getElementById("title").innerHTML.slice(0, -1) + titleText[i] + "_";
-                        if (i >= titleText.length - 1) {
-                            clearInterval(timer);
-                            setInterval(() => {
-                                document.querySelectorAll(".typeFlash").forEach((v) => {
-                                    if (v.innerHTML.includes("_")) {
-                                        v.innerHTML = v.innerHTML.slice(0, v.innerHTML.length-1);
-                                    }
-                                    else {
-                                        v.innerHTML += "_";
-                                    }
-                                });
-                            }, 1000);
-                        }
-                        i++;
-                    }, 150);
+                    if (sections.innerHTML == "") {
+                        location.reload();
+                    }
                 }
-	    }, 10);
+                else {
+                    sections.innerHTML = "";
+                }
+            }, 10);
         }, 500);
     }, 2000);
 }
