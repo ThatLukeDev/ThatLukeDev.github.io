@@ -132,6 +132,9 @@ section {
 .glitchImgG {
     animation: glitchEffectG 0.23s infinite;
 }
+.raytrace_rust-glitch {
+    position: relative;
+}
 @keyframes glitchEffectR {
     10% {
 	clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 70%, 0% 79%, 100% 79%, 100% 100%, 0% 100%);

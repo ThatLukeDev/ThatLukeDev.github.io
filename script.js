@@ -34,6 +34,43 @@ window.onload = () => {
             const colourSwitchElements = document.querySelectorAll(".switchColour");
             colourSwitchElements.forEach((element) => colourObserver.observe(element));
 
+            let elementsRaytraceRust = document.querySelectorAll(".raytraceRustImg");
+            let glitchElements = document.querySelectorAll(".glitchRaytrace");
+            let glitchElementsRust = document.querySelectorAll(".glitchRaytraceRust");
+            let observingRaytrace = true;
+            const raytraceObserver = new IntersectionObserver((entries) => {
+                entries.forEach((v) => {
+                    if (v.isIntersecting && !observingRaytrace) {
+                        observingRaytrace = true;
+                        elementsRaytraceRust.forEach((v) => { v.style.display = "none"; });
+                        glitchElements.forEach((v) => { v.style.display = "none"; });
+                        glitchElementsRust.forEach((v) => { v.style.display = "none"; });
+
+                        setTimeout(() => {
+                            glitchElements.forEach((v) => { v.style.display = "block"; });
+			}, 2000)
+                        setTimeout(() => {
+                            glitchElements.forEach((v) => { v.style.display = "none"; });
+                            glitchElementsRust.forEach((v) => { v.style.display = "block"; });
+			}, 3250)
+                        setTimeout(() => {
+                            glitchElementsRust.forEach((v) => { v.style.display = "none"; });
+                            elementsRaytraceRust.forEach((v) => { v.style.display = "block"; });
+			}, 4500)
+                    }
+                    else {
+                        if (observingRaytrace) {
+                            observingRaytrace = false;
+                            elementsRaytraceRust.forEach((v) => { v.style.display = "none"; });
+                            glitchElements.forEach((v) => { v.style.display = "none"; });
+                            glitchElementsRust.forEach((v) => { v.style.display = "none"; });
+                        }
+                    }
+                });
+            });
+            const raytraceElements = document.querySelectorAll(".raytraceImg");
+            raytraceElements.forEach((element) => raytraceObserver.observe(element));
+
             const titleText = "My Portfolio";
             let i = 0;
 
