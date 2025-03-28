@@ -37,6 +37,7 @@ window.onload = () => {
             let elementsRaytraceRust = document.querySelectorAll(".raytraceRustImg");
             let glitchElements = document.querySelectorAll(".glitchRaytrace");
             let glitchElementsRust = document.querySelectorAll(".glitchRaytraceRust");
+            let raytraceLang = document.querySelector("#raytraceLangText");
             let observingRaytrace = true;
             let timeoutId = null;
             const raytraceObserver = new IntersectionObserver((entries) => {
@@ -46,9 +47,11 @@ window.onload = () => {
                         elementsRaytraceRust.forEach((v) => { v.style.display = "none"; });
                         glitchElements.forEach((v) => { v.style.display = "none"; });
                         glitchElementsRust.forEach((v) => { v.style.display = "none"; });
+                        raytraceLang.innerHTML = "C++";
 
                         timeoutId = setTimeout(() => {
                             glitchElements.forEach((v) => { v.style.display = "block"; });
+                            raytraceLang.innerHTML = "Rust";
                             setTimeout(() => {
                                 glitchElements.forEach((v) => { v.style.display = "none"; });
                                 glitchElementsRust.forEach((v) => { v.style.display = "block"; });
@@ -66,6 +69,7 @@ window.onload = () => {
                             elementsRaytraceRust.forEach((v) => { v.style.display = "none"; });
                             glitchElements.forEach((v) => { v.style.display = "none"; });
                             glitchElementsRust.forEach((v) => { v.style.display = "none"; });
+                            raytraceLang.innerHTML = "C++";
                         }
                     }
                 });
