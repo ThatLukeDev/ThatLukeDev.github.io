@@ -38,6 +38,7 @@ window.onload = () => {
             let glitchElements = document.querySelectorAll(".glitchRaytrace");
             let glitchElementsRust = document.querySelectorAll(".glitchRaytraceRust");
             let raytraceLang = document.querySelector("#raytraceLangText");
+            let raytraceLink = document.querySelector("#raytraceLink");
             let observingRaytrace = true;
             let timeoutId = null;
             const raytraceObserver = new IntersectionObserver((entries) => {
@@ -48,10 +49,12 @@ window.onload = () => {
                         glitchElements.forEach((v) => { v.style.display = "none"; });
                         glitchElementsRust.forEach((v) => { v.style.display = "none"; });
                         raytraceLang.innerHTML = "C++";
+                        raytraceLink.href = "https://github.com/ThatLukeDev/raytracing";
 
                         timeoutId = setTimeout(() => {
                             glitchElements.forEach((v) => { v.style.display = "block"; });
                             raytraceLang.innerHTML = "Rust";
+                            raytraceLink.href = "https://github.com/ThatLukeDev/rust-raytracing";
                             setTimeout(() => {
                                 glitchElements.forEach((v) => { v.style.display = "none"; });
                                 glitchElementsRust.forEach((v) => { v.style.display = "block"; });
@@ -70,6 +73,7 @@ window.onload = () => {
                             glitchElements.forEach((v) => { v.style.display = "none"; });
                             glitchElementsRust.forEach((v) => { v.style.display = "none"; });
                             raytraceLang.innerHTML = "C++";
+                            raytraceLink.href = "https://github.com/ThatLukeDev/raytracing";
                         }
                     }
                 });
