@@ -38,6 +38,7 @@ window.onload = () => {
             let glitchElements = document.querySelectorAll(".glitchRaytrace");
             let glitchElementsRust = document.querySelectorAll(".glitchRaytraceRust");
             let observingRaytrace = true;
+            let timeoutId = null;
             const raytraceObserver = new IntersectionObserver((entries) => {
                 entries.forEach((v) => {
                     if (v.isIntersecting && !observingRaytrace) {
@@ -46,21 +47,22 @@ window.onload = () => {
                         glitchElements.forEach((v) => { v.style.display = "none"; });
                         glitchElementsRust.forEach((v) => { v.style.display = "none"; });
 
-                        setTimeout(() => {
+                        timeoutId = setTimeout(() => {
                             glitchElements.forEach((v) => { v.style.display = "block"; });
+                            setTimeout(() => {
+                                glitchElements.forEach((v) => { v.style.display = "none"; });
+                                glitchElementsRust.forEach((v) => { v.style.display = "block"; });
+			    }, 250)
+                            setTimeout(() => {
+                                glitchElementsRust.forEach((v) => { v.style.display = "none"; });
+                                elementsRaytraceRust.forEach((v) => { v.style.display = "block"; });
+			    }, 500)
 			}, 2000)
-                        setTimeout(() => {
-                            glitchElements.forEach((v) => { v.style.display = "none"; });
-                            glitchElementsRust.forEach((v) => { v.style.display = "block"; });
-			}, 3250)
-                        setTimeout(() => {
-                            glitchElementsRust.forEach((v) => { v.style.display = "none"; });
-                            elementsRaytraceRust.forEach((v) => { v.style.display = "block"; });
-			}, 4500)
                     }
                     else {
                         if (observingRaytrace) {
                             observingRaytrace = false;
+                            clearTimeout(timeoutId);
                             elementsRaytraceRust.forEach((v) => { v.style.display = "none"; });
                             glitchElements.forEach((v) => { v.style.display = "none"; });
                             glitchElementsRust.forEach((v) => { v.style.display = "none"; });
@@ -68,7 +70,7 @@ window.onload = () => {
                     }
                 });
             });
-            const raytraceElements = document.querySelectorAll(".raytraceImg");
+            const raytraceElements = document.querySelectorAll(".raytraceImgOri");
             raytraceElements.forEach((element) => raytraceObserver.observe(element));
 
             const titleText = "My Portfolio";
